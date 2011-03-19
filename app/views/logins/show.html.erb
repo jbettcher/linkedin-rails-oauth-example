@@ -1,0 +1,7 @@
+<% if current_user %>
+  Welcome to My Awesome Site, <%=link_to current_user['firstName'], current_user['siteStandardProfileRequest']['url'] %>!
+  <%=button_to "Sign Out", logout_login_path, :method => :get %>
+<% else %>
+  Sign in with LinkedIn
+  <%=button_to "Sign In", login_path, :method => :post %>
+<% end %>
